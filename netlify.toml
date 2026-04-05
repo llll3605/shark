@@ -1,6 +1,6 @@
 [build]
-  # Netlify가 pnpm 10을 쓰지 못하게 우리가 직접 pnpm 9를 설치하고 빌드합니다.
-  command = "npm install -g pnpm@9.15.4 && pnpm install --no-frozen-lockfile && pnpm build"
+  # 전역 설치(-g) 대신 로컬에 pnpm을 설치하여 충돌을 피합니다.
+  command = "npm install pnpm@9.15.4 && ./node_modules/.bin/pnpm install --no-frozen-lockfile && ./node_modules/.bin/pnpm build"
   publish = "dist"
 
 [build.environment]
