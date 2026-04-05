@@ -1,0 +1,8 @@
+[build]
+  # Netlify가 pnpm 10을 쓰지 못하게 우리가 직접 pnpm 9를 설치하고 빌드합니다.
+  command = "npm install -g pnpm@9.15.4 && pnpm install --no-frozen-lockfile && pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_ENV = "development"
